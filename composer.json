@@ -1,5 +1,5 @@
 {
-    "name": "lesstif/php-jira-rest-client",
+    "name": "deselbi/php-jira-rest-client",
     "description": "JIRA REST API Client for PHP Users.",
     "type": "library",
     "keywords": ["jira", "rest", "jira-php", "jira-rest"],
@@ -18,8 +18,7 @@
     "authors": [
         {
             "name": "KwangSeob Jeong",
-            "email": "lesstif@gmail.com",
-            "homepage": "http://lesstif.com/"
+            "email": "lesstif@gmail.com"
         }
     ],
     "autoload": {
