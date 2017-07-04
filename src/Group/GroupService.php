@@ -24,7 +24,7 @@ class GroupService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri.$queryParam, null);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         return $this->json_mapper->map(
                 json_decode($ret), new User()
@@ -45,7 +45,7 @@ class GroupService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri . '/member'.$queryParam, null);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         $userData = json_decode($ret);
 
@@ -68,7 +68,7 @@ class GroupService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri, $data);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         $groupData = json_decode($ret);
         $groups = [];
@@ -94,7 +94,7 @@ class GroupService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri . '/user?groupname=' . urlencode($groupName), $data);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         $group = $this->json_mapper->map(
             json_decode($ret), new Group()
@@ -118,7 +118,7 @@ class GroupService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri . '/user?' . $param, [], 'DELETE');
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         return $ret;
     }

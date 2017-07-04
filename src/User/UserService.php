@@ -25,7 +25,7 @@ class UserService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri.$queryParam, null);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         return $this->json_mapper->map(
                 json_decode($ret), new User()
@@ -46,7 +46,7 @@ class UserService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri . '/search' . $queryParam, null);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         $userData = json_decode($ret);
         $users = [];
@@ -76,7 +76,7 @@ class UserService extends \JiraRestApi\JiraClient
 
         $ret = $this->exec($this->uri . '/assignable/search' . $queryParam, null);
 
-        $this->log->addInfo("Result=\n".$ret);
+        $this->log->info("Result=\n".$ret);
 
         $userData = json_decode($ret);
         $users = [];

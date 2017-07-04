@@ -38,7 +38,7 @@ class ProjectService extends \JiraRestApi\JiraClient
     {
         $ret = $this->exec($this->uri . "/$projectIdOrKey", null);
 
-        $this->log->addInfo('Result=' . $ret);
+        $this->log->info('Result=' . $ret);
 
         $prj = $this->json_mapper->map(
             json_decode($ret), new Project()
@@ -85,7 +85,7 @@ class ProjectService extends \JiraRestApi\JiraClient
     {
         $ret = $this->exec($this->uri . "/type");
 
-        $this->log->addInfo('Result=' . $ret);
+        $this->log->info('Result=' . $ret);
 
         $json = json_decode($ret);
         $results = array_map(function ($elem) {
@@ -103,7 +103,7 @@ class ProjectService extends \JiraRestApi\JiraClient
     {
         $ret = $this->exec($this->uri . "/type/$key");
 
-        $this->log->addInfo('Result=' . $ret);
+        $this->log->info('Result=' . $ret);
 
         $type = $this->json_mapper->map(
             json_decode($ret, false), new ProjectType()
@@ -120,7 +120,7 @@ class ProjectService extends \JiraRestApi\JiraClient
     {
         $ret = $this->exec($this->uri . "/type/$key/accessible");
 
-        $this->log->addInfo('Result=' . $ret);
+        $this->log->info('Result=' . $ret);
 
         $type = $this->json_mapper->map(
             json_decode($ret, false), new ProjectType()
